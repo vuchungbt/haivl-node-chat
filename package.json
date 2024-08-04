@@ -1,0 +1,26 @@
+{
+  "name": "haivl-node-chat",
+  "version": "1.0.0",
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "frontend:dev": "npm run dev --workspace=frontend",
+    "frontend:build": "npm run build --workspace=frontend",
+    "frontend:lint": "npm run lint --workspace=frontend",
+    "frontend:preview": "npm run preview --workspace=frontend",
+    "backend:build": "npm run build --workspace=backend",
+    "backend:format": "npm run format --workspace=backend",
+    "backend:start": "npm run start --workspace=backend",
+    "backend:start:dev": "npm run start:dev --workspace=backend",
+    "backend:start:debug": "npm run start:debug --workspace=backend",
+    "backend:start:prod": "npm run start:prod --workspace=backend",
+    "backend:lint": "npm run lint --workspace=backend",
+    "backend:test": "npm run test --workspace=backend",
+    "backend:test:watch": "npm run test:watch --workspace=backend",
+    "backend:test:cov": "npm run test:cov --workspace=backend",
+    "backend:test:debug": "npm run test:debug --workspace=backend",
+    "backend:test:e2e": "npm run test:e2e --workspace=backend"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

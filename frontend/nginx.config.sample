@@ -1,0 +1,19 @@
+server {
+    listen       80;
+    listen  [::]:80;
+
+    server_name   _;
+    server_tokens off;
+
+    root   /var/www/html;
+    gzip   on;
+    gzip_static on;
+    gzip_types
+    	text/css
+    	text/plain
+    	text/javascript
+    	application/javascript
+    	application/json
+    	application/x-javascript
+    	image/svg+xml;
+}

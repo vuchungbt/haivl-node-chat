@@ -13,10 +13,11 @@ import { AuthModule } from './auth/auth.module';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
-        uri: configService.get<string>('DATABASE_URI'),
-        dbName: configService.get<string>('DATABASE_NAME'),
-        user: configService.get<string>('DATABASE_USER'),
-        pass: configService.get<string>('DATABASE_PASSWORD'),
+        uri:
+          configService.get<string>('DATABASE_URI') || process.env.DATABASE_URI,
+        dbName:
+          configService.get<string>('DATABASE_NAME') ||
+          process.env.DATABASE_NAME,
       }),
     }),
     UserModule,

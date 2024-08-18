@@ -13,6 +13,9 @@ export class User {
 
   @Prop()
   resetToken: string;
+
+  @Prop()
+  resetTokenExpire: Date;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

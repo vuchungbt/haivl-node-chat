@@ -1,9 +1,7 @@
-import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Param, Post } from '@nestjs/common';
 import { CreateUserDto } from '../user/dto/create-user.dto';
-import { UserService } from '../user/user.service';
 import { ObjectResponse } from '../definitions/httpResponse';
 import { User } from '../user/schemas/user.schema';
-import * as bcrypt from 'bcrypt';
 import { UserLoginDto } from './dto/user-login.dto';
 import { AuthService } from './auth.service';
 
@@ -30,6 +28,26 @@ export class AuthController {
     return {
       statusCode: 200,
       data: accessTokenObject,
+    };
+  }
+
+  @Post('/forgotpassword')
+  async forgotPassword(@Body('username') username: string) {
+    await this.authService.passwordRequest(username);
+    return {
+      statusCode: 200,
+    };
+  }
+
+  @Post('/createpassword/:username/token/:resetToken')
+  async createPassword(
+    @Param('username') username: string,
+    @Param('resetToken') resetToken: string,
+    @Body('password') password: string,
+  ) {
+    await this.authService.createPassword(username, password, resetToken);
+    return {
+      statusCode: 200,
     };
   }
 }

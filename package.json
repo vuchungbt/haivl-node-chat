@@ -1,7 +1,10 @@
 {
   "name": "haivl-node-chat",
   "version": "1.0.0",
-  "workspaces": ["frontend", "backend"],
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
     "frontend:dev": "npm run dev --workspace=frontend",
     "frontend:build": "npm run build --workspace=frontend",
@@ -22,5 +25,9 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@nestjs/mongoose": "^10.0.10",
+    "mongoose": "^8.5.2"
+  }
 }
